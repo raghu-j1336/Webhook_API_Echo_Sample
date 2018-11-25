@@ -3,11 +3,22 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 //const fetch = require("node-fetch");
-
+var result;
 const restService = express();
 
+function cb(err, response, body){
+ var weather = JSON.parse(body);
+      result = weather;
+}
+
 function test(){
-      return 2;
+      result = undefined;
+      var url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
+      var req = request(url, cb);
+      while(result === undefined) {
+            require('deasync').runLoopOnce();
+      }
+      return result;
 }
 
 var getWeatherInfo = city =>
