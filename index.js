@@ -66,6 +66,7 @@ restService.post("/echo", function(req, res) {
        temp = weatherText;
       }
     }
+   });
   return res.json({
         fulfillmentText: temp,
     source: "EchoService"
