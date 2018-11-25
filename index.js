@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 
-const { OPENWEATHER_API_KEY } = a707631010fd6300d47d98e6e038151c;
+const OPENWEATHER_API_KEY = a707631010fd6300d47d98e6e038151c;
 
 
  const getWeatherInfo = city =>
