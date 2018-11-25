@@ -5,12 +5,12 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 
-var OPENWEATHER_API_KEY = a707631010fd6300d47d98e6e038151c;
+
 
 
   const getWeatherInfo = city =>
       fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPENWEATHER_API_KEY}`
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a707631010fd6300d47d98e6e038151c;`
       )
         .then(response => response.json())
         .then(data => {
