@@ -6,7 +6,9 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 
-
+function test(){
+      return 2;
+}
 
 var getWeatherInfo = city =>
       fetch(
