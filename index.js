@@ -31,14 +31,14 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
       var temp = getWeatherInfo("Melbourne");
-  var speech = temp;
+ // var speech = temp;
     /*req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText?
        req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";*/
   return res.json({
-        fulfillmentText: speech,
+        fulfillmentText: temp,
     source: "EchoService"
   });
 });
