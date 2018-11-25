@@ -30,12 +30,13 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  var speech =
-    req.body.queryResult &&
+      var temp = getWeatherInfo("Melbourne");
+  var speech = temp;
+    /*req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText?
        req.body.queryResult.parameters.echoText
-      : "Seems like some problem. Speak again.";
+      : "Seems like some problem. Speak again.";*/
   return res.json({
         fulfillmentText: speech,
     source: "EchoService"
