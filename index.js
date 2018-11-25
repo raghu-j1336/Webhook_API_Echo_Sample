@@ -8,7 +8,7 @@ const restService = express();
 
 
 
-const getWeatherInfo = city =>
+var getWeatherInfo = city =>
       fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c`
       )
