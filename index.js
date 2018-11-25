@@ -18,7 +18,7 @@ const getWeatherInfo = city =>
           const celsius = Math.round(kelvin - 273.15);
           return celsius;
         })
-        .catch(error => console.log(error);
+        .catch(error => console.log(error));
 
 
 restService.use(
