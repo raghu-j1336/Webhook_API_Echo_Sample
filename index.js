@@ -50,8 +50,24 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText?
        req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";*/
+ let url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
+  request(url, function (err, response, body) {
+    if(err){
+     temp = "error";
+      //res.render('index', {weather: null, error: 'Error, please try again'});
+    } else {
+      let weather = JSON.parse(body)
+      if(weather.main == undefined){
+       // res.render('index', {weather: null, error: 'Error, please try again'});
+       temp = undefined;
+      } else {
+        let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+        //res.render('index', {weather: weatherText, error: null});
+       temp = weatherText;
+      }
+    }
   return res.json({
-        fulfillmentText: test(),
+        fulfillmentText: temp,
     source: "EchoService"
   });
 });
