@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 
 const restService = express();
 
@@ -10,7 +10,8 @@ const restService = express();
 
 const getWeatherInfo = city =>
       fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c`)
+        `http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c`
+      )
         .then(response => response.json())
         .then(data => {
           const kelvin = data.main.temp;
