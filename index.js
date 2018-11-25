@@ -30,7 +30,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-      var temp = getWeatherInfo("Melbourne");
+      var temp = 1;
  // var speech = temp;
     /*req.body.queryResult &&
     req.body.queryResult.parameters &&
