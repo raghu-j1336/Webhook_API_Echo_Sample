@@ -5,6 +5,22 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 
+const { OPENWEATHER_API_KEY } = a707631010fd6300d47d98e6e038151c;
+
+
+ const getWeatherInfo = city =>
+      fetch(
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPENWEATHER_API_KEY}`
+      )
+        .then(response => response.json())
+        .then(data => {
+          const kelvin = data.main.temp;
+          const celsius = Math.round(kelvin - 273.15);
+          return celsius;
+        })
+        .catch(error => console.log(error));
+
+
 restService.use(
   bodyParser.urlencoded({
     extended: true
