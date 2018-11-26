@@ -3,15 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require('request');
-//const fetch = require("node-fetch");
-var result;
 const restService = express();
-
-function cb(err, response, body){
- var weather = JSON.parse(body);
-      result = weather;
-}
-
 
 /*var getWeatherInfo = city =>
       fetch(
