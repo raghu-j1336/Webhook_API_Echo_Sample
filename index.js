@@ -58,14 +58,15 @@ restService.post("/echo", function(req, res) {
       //res.render('index', {weather: null, error: 'Error, please try again'});
     } else {
       let weather = JSON.parse(body)
-      if(weather.main == undefined){
+      /*if(weather.main == undefined){
        // res.render('index', {weather: null, error: 'Error, please try again'});
        temp = undefined;
       } else {
         let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
         //res.render('index', {weather: weatherText, error: null});
        temp = weatherText;
-      }
+      }*/
+      temp = weather;
     }
    });
   return res.json({
