@@ -53,7 +53,7 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again.";*/
  let url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
   request(url, function (err, response, body) {
-    if(err){
+   /* if(err){
      temp = "error";
       //res.render('index', {weather: null, error: 'Error, please try again'});
     } else {
@@ -66,11 +66,12 @@ restService.post("/echo", function(req, res) {
         //res.render('index', {weather: weatherText, error: null});
        temp = weatherText;
       }*/
-      temp = weather;
-    }
-   });
+      //temp = weather;
+    }*/
+          });
+  
   return res.json({
-        fulfillmentText: temp,
+        fulfillmentText: 3,
     source: "EchoService"
   });
 });
