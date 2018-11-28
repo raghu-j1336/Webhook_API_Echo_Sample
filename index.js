@@ -5,18 +5,6 @@ const bodyParser = require("body-parser");
 const request = require('request');
 const restService = express();
 
-/*var getWeatherInfo = city =>
-      fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c`
-      )
-        .then(response => response.json())
-        .then(data => {
-          const kelvin = data.main.temp;
-          const celsius = Math.round(kelvin - 273.15);
-          return celsius;
-        })
-        .catch(error => console.log(error));*/
-
 
 restService.use(
   bodyParser.urlencoded({
@@ -36,21 +24,21 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again.";*/
  let url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
  request(url, function (err, response, body) {
-   /* if(err){
+    if(err){
      temp = "error";
       //res.render('index', {weather: null, error: 'Error, please try again'});
     } else {
       let weather = JSON.parse(body)
-      /*if(weather.main == undefined){
+      if(weather.main == undefined){
        // res.render('index', {weather: null, error: 'Error, please try again'});
        temp = undefined;
       } else {
         let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
         //res.render('index', {weather: weatherText, error: null});
        temp = weatherText;
-      }*/
-      //temp = weather;
-    //}*/
+      }
+      temp = weather;
+    }
           });
   
   return res.json({
