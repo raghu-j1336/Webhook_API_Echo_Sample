@@ -24,7 +24,7 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again.";*/
  let url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
  request(url, function (err, response, body) {
-    if(err){
+    /*if(err){
      temp = "error";
     } else {
       let weather = JSON.parse(body)
@@ -34,7 +34,7 @@ restService.post("/echo", function(req, res) {
           let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
           temp = weatherText;
       }
-    }
+    }*/
     });
   
   return res.json({
