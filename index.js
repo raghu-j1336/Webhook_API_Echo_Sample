@@ -16,6 +16,7 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
       var temp = 1;
+  console.log("1st line");
  // var speech = temp;
     /*req.body.queryResult &&
     req.body.queryResult.parameters &&
