@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-//const request = require('request-promise');
+const rp = require('request');
 
 const restService = express();
 
@@ -22,7 +22,7 @@ restService.post("/echo", function(req, res) {
       ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
   var url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
-  request.get(url, function (err, response, body) {
+  request(url, function (err, response, body) {
     if(err){
      temp = err;
     } else {
