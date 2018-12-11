@@ -21,6 +21,19 @@ restService.post("/echo", function(req, res) {
       ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
   var url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
+  request(url, function (err, response, body) {
+    if(err){
+     temp = "error";
+    } /*else {
+      let weather = JSON.parse(body)
+      if(weather.main == undefined){
+          temp = undefined;
+      } else {
+          let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+          temp = weatherText;
+      }
+    }*/
+    });
   return res.json({
     speech: speech,
     displayText: speech,
