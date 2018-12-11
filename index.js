@@ -24,7 +24,7 @@ restService.post("/echo", function(req, res) {
   request(url, function (err, response, body) {
     if(err){
      temp = "error";
-    } /*else {
+    } else {
       let weather = JSON.parse(body)
       if(weather.main == undefined){
           temp = undefined;
@@ -32,7 +32,7 @@ restService.post("/echo", function(req, res) {
           let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
           temp = weatherText;
       }
-    }*/
+    }
     });
   return res.json({
     speech: speech,
