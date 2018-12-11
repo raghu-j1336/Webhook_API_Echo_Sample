@@ -18,11 +18,11 @@ restService.post("/echo", function(req, res) {
       var temp = 1;
   console.log("1st line");
  // var speech = temp;
-    /*req.body.queryResult &&
+    var speech = req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText?
        req.body.queryResult.parameters.echoText
-      : "Seems like some problem. Speak again.";*/
+      : "Seems like some problem. Speak again.";
  var url = 'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,uk&appid=a707631010fd6300d47d98e6e038151c';
  //request(url, function (err, response, body) {
     /*if(err){
@@ -39,7 +39,7 @@ restService.post("/echo", function(req, res) {
     //});
   
   return res.json({
-        fulfillmentText: temp,
+        fulfillmentText: speech,
     source: "EchoService"
   });
 });
